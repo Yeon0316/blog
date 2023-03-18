@@ -1,5 +1,5 @@
 ---
-title: "blog"
+title: "가보자고"
 listing:
   contents: posts
   sort: "date desc"
