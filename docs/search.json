@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "This Blog is …",
+    "section": "",
+    "text": "공부의 흔적을 담다."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Yeon",
+    "section": "",
+    "text": "Numpy\n\n\n\n\n\n\n\npython\n\n\nNumpy\n\n\nData mining\n\n\n\n\n\n\n\n\n\n\n\nApr 4, 2023\n\n\n방채연\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html",
+    "href": "posts/Numpy/Numpy.html",
+    "title": "Numpy",
+    "section": "",
+    "text": "도구 - Numpy - 넘파이(NumPy)는 파이썬의 과학 컴퓨팅을 위한 기본 라이브러리 - 핵심 = 강력한 N-차원 배열 객체 - 선형 대수, 푸리에(Fourier) 변환, 유사 난수 생성과 같은 유용한 함수들을 제공"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#np.zeros",
+    "href": "posts/Numpy/Numpy.html#np.zeros",
+    "title": "Numpy",
+    "section": "np.zeros",
+    "text": "np.zeros\nzeros 함수는 0으로 채워진 배열을 생성:\n\n### 5개의 0이 들어간 zero 배열 생성\nnp.zeros(5)\n\n2D 배열(즉, 행렬)을 만들려면 원하는 행과 열의 크기를 튜플로 전달.\n\nnp.zeros((3, 4))"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#용어",
+    "href": "posts/Numpy/Numpy.html#용어",
+    "title": "Numpy",
+    "section": "용어",
+    "text": "용어\n\n넘파이에서 각 차원을 축(axis) 이라고 함.\n축의 개수를 랭크(rank) 라고 함.\n\n3x4의 행렬 = 랭크 2인 배열(즉, 2차원)\n첫 번째 축의 길이는 3, 두 번째 축의 길이는 4.\n\n배열의 축 길이 = 배열의 크기(shape)\n\n위 행렬의 크기는 (3, 4)\n랭크 = 크기의 길이\n\n배열의 사이즈(size)는 전체 원소의 개수이다. 축의 길이를 모두 곱해서 구할 수 있음 (3x4 = 12)\n\n\n### 3행 4열의 zeros 배열 생성\na = np.zeros((3, 4))\na\n\n\na.shape\n\n\na.ndim  # len(a.shape)와 같음\n\n\na.size"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#n-차원-배열",
+    "href": "posts/Numpy/Numpy.html#n-차원-배열",
+    "title": "Numpy",
+    "section": "N-차원 배열",
+    "text": "N-차원 배열\n임의의 랭크 수를 가진 N-차원 배열을 만들 수 있음.\n\n### 크기가 (2, 3, 4)인 3D 배열(랭크는 3)\nnp.zeros((2, 3, 4))"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#배열-타입",
+    "href": "posts/Numpy/Numpy.html#배열-타입",
+    "title": "Numpy",
+    "section": "배열 타입",
+    "text": "배열 타입\n넘파이 배열의 타입은 ndarray\n\ntype(np.zeros((3, 4)))"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#np.ones",
+    "href": "posts/Numpy/Numpy.html#np.ones",
+    "title": "Numpy",
+    "section": "np.ones",
+    "text": "np.ones\nndarray를 만들 수 있는 넘파이 함수는 많음 ones 함수는 1로 채워진 배열을 생성\n\n### 1로 채워진 3x4 크기의 행렬\nnp.ones((3, 4))"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#np.full",
+    "href": "posts/Numpy/Numpy.html#np.full",
+    "title": "Numpy",
+    "section": "np.full",
+    "text": "np.full\n주어진 값으로 지정된 크기의 배열을 초기화 함.\n\n###`π`로 채워진 3 x 4 크기의 행렬\nnp.full((3, 4), np.pi)  # np.pi = 원주율(pi)의 근사값을 나타냄"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#np.empty",
+    "href": "posts/Numpy/Numpy.html#np.empty",
+    "title": "Numpy",
+    "section": "np.empty",
+    "text": "np.empty\n지정된 크기의 비어있는(empty) 배열을 생성함. 초기화되지 않은 값으로 배열을 생성. 배열의 내용은 예측 불가능 하며, 메모리 상황에 따라 달라짐.\n\nnp.empty(2, 3)"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#np.array",
+    "href": "posts/Numpy/Numpy.html#np.array",
+    "title": "Numpy",
+    "section": "np.array",
+    "text": "np.array\narray 함수는 파이썬 리스트를 사용하여 ndarray를 초기화 함.\n\nnp.array([[1, 2, 3, 4], [10, 20, 30, 40]])"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#np.arange",
+    "href": "posts/Numpy/Numpy.html#np.arange",
+    "title": "Numpy",
+    "section": "np.arange",
+    "text": "np.arange\n파이썬의 기본 range 함수와 비슷한 넘파이 arange 함수를 사용하여 ndarray를 만들 수 있음."
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#np.linspace",
+    "href": "posts/Numpy/Numpy.html#np.linspace",
+    "title": "Numpy",
+    "section": "np.linspace",
+    "text": "np.linspace\n위와 같은 이유로 부동 소수를 사용할 땐 arange 대신에 linspace 함수를 사용하는 것이 좋다. linspace 함수는 지정된 개수만큼 두 값 사이를 나눈 배열을 반환함.\n\n### arange 와는 다르게 최댓값이 포함됨.\nprint(np.linspace(0, 5/3, 6))"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#np.rand-와-np.randn",
+    "href": "posts/Numpy/Numpy.html#np.rand-와-np.randn",
+    "title": "Numpy",
+    "section": "np.rand 와 np.randn",
+    "text": "np.rand 와 np.randn\n넘파이의 random 모듈에는 ndarry를 랜덤한 값으로 초기화 할 수 있는 함수들이 존재함.\n균등 분포인 0과 1 사이의 랜덤한 부동 소수로 3x4 행렬을 초기화:\n\nnp.random.rand(3, 4)\n\n평균이 0이고 분산이 1인 일변량 정규 분포(가우시안 분포)에서 샘플링한 랜덤한 부동 소수를 담은 3x4 행렬:\n\nnp.random.randn(3, 4)\n\n맷플롯립을 사용해 분포의 모양 알아보기:\n\n%matplotlib inline\nimport matplotlib.pyplot as plt\n\n\nplt.hist(np.random.rand(100000), density=True, bins=100, histtype=\"step\", color=\"blue\", label=\"rand\")\nplt.hist(np.random.randn(100000), density=True, bins=100, histtype=\"step\", color=\"red\", label=\"randn\")\nplt.axis([-2.5, 2.5, 0, 1.1])\nplt.legend(loc = \"upper left\")\nplt.title(\"Random distributions\")\nplt.xlabel(\"Value\")\nplt.ylabel(\"Density\")\nplt.show()"
+  },
+  {
+    "objectID": "posts/Numpy/Numpy.html#np.fromfunction",
+    "href": "posts/Numpy/Numpy.html#np.fromfunction",
+    "title": "Numpy",
+    "section": "np.fromfunction",
+    "text": "np.fromfunction\n지정된 함수를 이용하여 배열(array)을 생성. 생성할 배열의 크기를 정의하고, 배열의 인덱스 값을 이용하여 각 요소의 값을 계산하는 함수를 제공해야함. - numpy.fromfunction(function, shape, **kwargs) - function: 배열 요소의 값을 계산하는 함수 - shape: 생성할 배열의 크기를 지정 - **kwargs: 해당 함수에 전달한 추가적인 인수들을 나타냄\n\ndef my_function(z, y, x):\n    return x + 10 * y + 100 * z\n\nnp.fromfunction(my_function, (3, 2, 10))"
+  }
+]
