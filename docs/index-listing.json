@@ -1,8 +1,6 @@
 {
   "listing": "/index.html",
   "items": [
-    "/posts/Numpy/Numpy.html",
-    "/posts/post-with-code/index.html",
-    "/posts/welcome/index.html"
+    "/posts/Numpy/Numpy.html"
   ]
 }
