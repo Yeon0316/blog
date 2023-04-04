@@ -2,7 +2,7 @@
 title: "Numpy"
 author: "방채연"
 categories: [python, Numpy, Data mining]
-image: 
+image: "Numpy_img.jpg"
 ---
 
 # "Numpy 란"
