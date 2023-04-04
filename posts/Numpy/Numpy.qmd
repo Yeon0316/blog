@@ -1,0 +1,219 @@
+---
+title: "Numpy"
+author: "방채연"
+categories: [python, Numpy, Data mining]
+image: 
+---
+
+# "Numpy 란"
+**도구 - Numpy**
+- 넘파이(NumPy)는 파이썬의 과학 컴퓨팅을 위한 기본 라이브러리
+- 핵심 = 강력한 N-차원 배열 객체
+- 선형 대수, 푸리에(Fourier) 변환, 유사 난수 생성과 같은 유용한 함수들을 제공
+
+# 배열 생성
+
+```{python}
+
+# Numpy import
+import numpy as np
+
+```
+
+## `np.zeros`
+`zeros` 함수는 0으로 채워진 배열을 생성:
+
+```{python}
+### 5개의 0이 들어간 zero 배열 생성
+np.zeros(5)
+```
+2D 배열(즉, 행렬)을 만들려면 원하는 행과 열의 크기를 튜플로 전달.
+
+```{python}
+np.zeros((3, 4))
+```
+
+## 용어
+- 넘파이에서 각 차원을 축(axis) 이라고 함.
+- 축의 개수를 랭크(rank) 라고 함.
+  - 3x4의 행렬 = 랭크 2인 배열(즉, 2차원)
+  - 첫 번째 축의 길이는 3, 두 번째 축의 길이는 4.
+- 배열의 축 길이 = 배열의 크기(shape)
+  - 위 행렬의 크기는 `(3, 4)`
+  - 랭크 = 크기의 길이
+- 배열의 사이즈(size)는 전체 원소의 개수이다. 축의 길이를 모두 곱해서 구할 수 있음 (3x4 = 12)
+
+```{python}
+### 3행 4열의 zeros 배열 생성
+a = np.zeros((3, 4))
+a
+```
+
+```{python}
+a.shape
+```
+
+```{python}
+a.ndim  # len(a.shape)와 같음
+```
+
+```{python}
+a.size
+```
+
+## N-차원 배열
+임의의 랭크 수를 가진 N-차원 배열을 만들 수 있음.
+
+```{python}
+### 크기가 (2, 3, 4)인 3D 배열(랭크는 3)
+np.zeros((2, 3, 4))
+```
+
+## 배열 타입
+넘파이 배열의 타입은 `ndarray`
+
+```{python}
+type(np.zeros((3, 4)))
+```
+
+## `np.ones`
+`ndarray`를 만들 수 있는 넘파이 함수는 많음
+`ones` 함수는 1로 채워진 배열을 생성
+
+```{python}
+### 1로 채워진 3x4 크기의 행렬
+np.ones((3, 4))
+```
+
+## `np.full`
+주어진 값으로 지정된 크기의 배열을 초기화 함.
+
+```{python}
+###`π`로 채워진 3 x 4 크기의 행렬
+np.full((3, 4), np.pi)  # np.pi = 원주율(pi)의 근사값을 나타냄
+```
+
+## `np.empty`
+지정된 크기의 비어있는(empty) 배열을 생성함.
+초기화되지 않은 값으로 배열을 생성.
+배열의 내용은 예측 불가능 하며, 메모리 상황에 따라 달라짐.
+
+```{python}
+np.empty(2, 3)
+```
+
+## `np.array`
+`array` 함수는 파이썬 리스트를 사용하여 `ndarray`를 초기화 함.
+
+```{python}
+np.array([[1, 2, 3, 4], [10, 20, 30, 40]])
+```
+
+## `np.arange`
+파이썬의 기본 `range` 함수와 비슷한 넘파이 `arange` 함수를 사용하여 `ndarray`를 만들 수 있음.
+
+# 기본 `range` 함수와 `np.arange` 함수의 차이점
+- `range` 함수는 리스트를 반환하지만, `arange` 함수는 NumPy array를 반환함.
+- `range` 함수는 정수(integer) 값만 받고, 시작(start), 끝(stop), 간격(step) 값으로 구성된 파라미터를 입력 받음.
+- `arange` 함수는 부동소수점(floation-point) 값을 받을 수 있으며, 시작, 끝, 간격 값 외에도 데이터 타입(type)과 배열 순서(order)를 지정할 수 있는 파라미터를 입력 받음.
+
+```{python}
+# 시작값, 끝값, 간격 순.
+np.arrange(1, 5)
+```
+
+```{python}
+np.arange(1.0, 5.0)
+```
+
+```{python}
+np.arange(1, 5, 0.5)
+```
+
+부동 소수를 사용할 경우, 원소의 개수가 일정하지 않을 수 있음.
+
+```{python}
+### 부동 소수 오차 때문에, 최댓값은 4/3 EHsms 5/3이 됨.
+print(np.arange(0, 5/3, 1/3))
+print(np.arange(0, 5/3, 0.333333333))
+print(np.arange(0, 5/3, 0.333333334))
+```
+
+그냥 계산을 할때는`arange` 함수가 더 빠름.
+```{python}
+my_arr=np.arange(1000000)
+my_list=list(range(1000000))
+
+%time for _ in range(10): my_arr2=my_arr*2
+%time for _ in range(10): my_list2=[x*2 for x in my_list]
+```
+
+하지만 반복문에 사용할 경우 좋지 않음.
+
+```{python}
+size=10
+for x in range(size): x**2
+
+import sys
+size=10
+%timeit for x in range(size): x**2
+    
+%timeit for x in np.arange(size): x**2 # 별로임
+    
+%timeit np.arange(size) ** 2
+```
+
+## `np.linspace`
+위와 같은 이유로 부동 소수를 사용할 땐 `arange` 대신에 `linspace` 함수를 사용하는 것이 좋다. `linspace` 함수는 지정된 개수만큼 두 값 사이를 나눈 배열을 반환함.
+
+```{python}
+### arange 와는 다르게 최댓값이 포함됨.
+print(np.linspace(0, 5/3, 6))
+```
+
+## `np.rand` 와 `np.randn`
+넘파이의 `random` 모듈에는 `ndarry`를 랜덤한 값으로 초기화 할 수 있는 함수들이 존재함.
+
+균등 분포인 0과 1 사이의 랜덤한 부동 소수로 3x4 행렬을 초기화:
+```{python}
+np.random.rand(3, 4)
+```
+
+평균이 0이고 분산이 1인 일변량 정규 분포(가우시안 분포)에서 샘플링한 랜덤한 부동 소수를 담은 3x4 행렬:
+
+```{python}
+np.random.randn(3, 4)
+```
+
+맷플롯립을 사용해 분포의 모양 알아보기:
+
+```{python}
+%matplotlib inline
+import matplotlib.pyplot as plt
+```
+
+```{python}
+plt.hist(np.random.rand(100000), density=True, bins=100, histtype="step", color="blue", label="rand")
+plt.hist(np.random.randn(100000), density=True, bins=100, histtype="step", color="red", label="randn")
+plt.axis([-2.5, 2.5, 0, 1.1])
+plt.legend(loc = "upper left")
+plt.title("Random distributions")
+plt.xlabel("Value")
+plt.ylabel("Density")
+plt.show()
+```
+
+## `np.fromfunction`
+지정된 함수를 이용하여 배열(array)을 생성.
+생성할 배열의 크기를 정의하고, 배열의 인덱스 값을 이용하여 각 요소의 값을 계산하는 함수를 제공해야함.
+- numpy.fromfunction(function, shape, **kwargs)
+  - `function`: 배열 요소의 값을 계산하는 함수
+  - `shape`: 생성할 배열의 크기를 지정
+  - `**kwargs`: 해당 함수에 전달한 추가적인 인수들을 나타냄
+
+```{python}
+def my_function(z, y, x):
+    return x + 10 * y + 100 * z
+
+np.fromfunction(my_function, (3, 2, 10))
+```
