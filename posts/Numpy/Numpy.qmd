@@ -1,6 +1,7 @@
 ---
 title: "Numpy"
 author: "방채연"
+date: "2023-04-04"
 categories: [python, Numpy, Data mining]
 image: "Numpy_img.jpg"
 ---
